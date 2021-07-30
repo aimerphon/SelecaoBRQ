@@ -32,6 +32,7 @@ namespace SelecaoBRQ.Data.Repository
 
             var usuariosAttualizar = new List<Usuario>();
             usuariosAttualizar.AddRange(usuariosCache);
+            entity.SetId(usuariosAttualizar.Count() + 1);
             usuariosAttualizar.Add(entity);
 
             _cache.Set(USUARIOS_KEY, usuariosAttualizar, ObterMemoryCacheEntryOptions());
@@ -83,8 +84,6 @@ namespace SelecaoBRQ.Data.Repository
             usuarioAtualizar.CPF = entity.CPF;
             usuarioAtualizar.Email = entity.Email;
             usuarioAtualizar.DataNascimento = entity.DataNascimento;
-
-            //_cache.Set(USUARIOS_KEY, usuariosAttualizar, ObterMemoryCacheEntryOptions());
         }
     }
 }

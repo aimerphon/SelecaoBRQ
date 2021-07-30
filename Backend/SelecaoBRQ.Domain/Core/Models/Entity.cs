@@ -60,6 +60,11 @@ namespace SelecaoBRQ.Domain.Core.Models
             return (GetType().GetHashCode() * 907) + Id.GetHashCode();
         }
 
+        public void SetId(int id)
+        {
+            this.Id = id;
+        }
+
         #endregion
     }
 }
