@@ -1,0 +1,86 @@
+<div class="margin-conteudo">
+    <div>
+        <h3>Visualizar Usuário</h3>
+    </div>
+
+    <form [formGroup]="usuarioForm">
+        <div class="row form-group">
+            <div class="col-12">
+                <label for="nome" class=" control-label">Nome:</label>
+            </div>
+            <div class="col-12">
+                <input name="nome" [disabled]="desabilitar === true" placeholder="Nome do Usuário" formControlName="nome"
+                    maxlength="50" class="tamanho-maximo">
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-6">
+                <div class="col-12">
+                    <label for="cpf" class=" control-label">CPF:</label>
+                </div>
+                <div class="col-12">
+                    <input name="cpf" [disabled]="desabilitar" placeholder="CPF do Usuário" formControlName="cpf"
+                        maxlength="11">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="col-12">
+                    <label for="cpf" class=" control-label">Email:</label>
+                </div>
+                <div class="col-12">
+                    <input name="email" [disabled]="desabilitar" [disabled]="desabilitar" placeholder="Email do Usuário"
+                        formControlName="email" maxlength="50" class="tamanho-maximo">
+                </div>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-4">
+                <div class="col-12">
+                    <label for="telefone" class=" control-label">Telefone:</label>
+                </div>
+                <div class="col-12">
+                    <input name="telefone" [disabled]="desabilitar" placeholder="Telefone do Usuário"
+                        formControlName="telefone" maxlength="11">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="col-12">
+                    <label for="sexo" class=" control-label">Sexo:</label>
+                </div>
+                <div class="col-12">
+                    <div class="col-6">
+                        <input type="radio" name="sexo" formControlName="sexo" [checked]="opcaoSexo == 'M'" value="M">
+                        Masculino
+                    </div>
+                    <div class="col-6">
+                        <input type="radio" name="sexo" formControlName="sexo" [checked]="opcaoSexo == 'F'" value="F">
+                        Feminino
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="col-12">
+                    <label for="dataNascimento" class=" control-label">Data de Nascimento:</label>
+                </div>
+                <div class="col-12">
+                    <input name="dataNascimento" [disabled]="desabilitar" placeholder="Data de Nascimento do Usuário"
+                        formControlName="dataNascimento" maxlength="10">
+                </div>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            &nbsp;
+        </div>
+        <div class="row">
+            <div class="col-12" style="text-align: center;">
+                <button color="primary" (click)="voltar()">Voltar</button>
+            </div>
+        </div>
+    </form>
+</div>

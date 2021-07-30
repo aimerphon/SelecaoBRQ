@@ -1,0 +1,86 @@
+<div class="margin-conteudo">
+    <div>
+        <h3>Alterar Usuário</h3>
+    </div>
+    <form [formGroup]="usuarioForm" (ngSubmit)="alterarUsuario(usuarioForm.value)">
+        <div class="row form-group">
+            <div class="col-12">
+                <label for="nome" class=" control-label">Nome:</label>
+            </div>
+            <div class="col-12">
+                <input name="nome" placeholder="Nome do Usuário" formControlName="nome" maxlength="50"
+                    class="tamanho-maximo">
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-6">
+                <div class="col-12">
+                    <label for="cpf" class=" control-label">CPF:</label>
+                </div>
+                <div class="col-12">
+                    <input name="cpf" placeholder="CPF do Usuário" mask="000.000.000-00" formControlName="cpf" somenteNumeros maxlength="14">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="col-12">
+                    <label for="cpf" class=" control-label">Email:</label>
+                </div>
+                <div class="col-12">
+                    <input name="email" placeholder="Email do Usuário" formControlName="email" maxlength="50"
+                        class="tamanho-maximo">
+                </div>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-4">
+                <div class="col-12">
+                    <label for="telefone" class=" control-label">Telefone:</label>
+                </div>
+                <div class="col-12">
+                    <input name="telefone" mask="(00) 00000-0000" somenteNumeros placeholder="Telefone do Usuário" formControlName="telefone" maxlength="15">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="col-12">
+                    <label for="sexo" class=" control-label">Sexo:</label>
+                </div>
+                <div class="col-12">
+                    <div class="col-6">
+                        <input type="radio" name="sexo" formControlName="sexo" [checked]="opcaoSexo == 'M'" value="M">
+                        Masculino
+                    </div>
+                    <div class="col-6">
+                        <input type="radio" name="sexo" formControlName="sexo" [checked]="opcaoSexo == 'F'" value="F">
+                        Feminino
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="col-12">
+                    <label for="dataNascimento" class=" control-label">Data de Nascimento:</label>
+                </div>
+                <div class="col-12">
+                    <input matInput name="dataNascimento" placeholder="Data de Nascimento do Usuário"
+                        formControlName="dataNascimento" maxlength="10">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            &nbsp;
+        </div>
+
+        <div class="row">
+            <div class="col-12" style="text-align: center;">
+                <button type="submit" [disabled]="!usuarioForm.valid" color="primary">Salvar</button> &nbsp;
+                <button color="primary" (click)="cancelarAlteracao()">Cancelar</button>
+            </div>
+        </div>
+    </form>
+</div>
